@@ -1,0 +1,113 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+body{
+	background: #989898;
+}
+.logo{
+	width:226px;
+	height: 106px;
+	margin: 0 auto;
+	background: url(img/logo_icon.png);
+}
+.pho{
+	width: 565px;
+	height: 50px;
+	margin: 0 auto;
+}
+.span{
+	font-size: 14px;
+	width: 76px;
+	height:50px;
+	float: left;
+	color:white;
+	line-height: 50px;
+	color: :#f4f4f4;
+}
+#phonenumber{
+	width:305px;
+	height: 50px;
+}
+.yanzh{
+	width: 565px;
+	height: 50px;
+	margin: 0 auto;
+}
+#shoujiyanzheng{
+	width:231px;
+	height: 50px;
+}
+.chuanjian{
+	width: 565px;
+	height: 50px;
+	margin: 0 auto;
+}
+#PassWord{
+	width:300px;
+	height: 50px;
+}
+.comfir{
+		width: 565px;
+	height: 50px;
+	margin: 0 auto;
+}
+#comfirpassword{
+	width:300px;
+	height: 50px;
+	}
+	
+.gongyong{
+	background:#cbcbcb;
+	border: none;
+	color: white;
+	padding-left: 15px;
+	float: left;
+}
+.yang
+{
+	margin-top: 10px;
+	position: relative;
+}
+.dakuangkuang{
+	width: auto;
+	height:270px;
+	margin: 0 auto;
+	padding-top: 30px;
+	display: block;
+}
+.img{
+	width: 64px;
+	height: 28px;
+}
+.tiaoyue{
+	width: 345px;
+	height: 16px;
+	margin: 0 auto;
+}
+.agree{
+	width: 30px;
+	height: 16px;
+	font-size: 10px;;
+	float: left;
+	color: white;
+	margin-top: -1px;
+}
+.tiaokuang{
+	float: left;
+	color: blue;
+	font-size: 10px;
+}
+.check{
+	float: left;
+	margin-right: 5px;
+}
+#next{
+	width: 300px;
+	height: 50px;
+	margin:0 auto;
+	display: block;
+	background: #333;
+	color: white;
+	border: none;
+}

@@ -1,0 +1,10 @@
+{
+   info:[
+          {
+           "PhoneNumber":"15874131475",
+            "UserName":"wanglei",
+            "PassWord":"123456",
+	    "Email":"1339210095@qq.ccom"
+           }
+         ] 
+}

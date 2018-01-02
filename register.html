@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link href="register.css" type="text/css" rel="stylesheet" />
+	</head>
+	<body>
+		<div class="logo"></div>
+		<div class="dakuangkuang">
+			<div class="pho yang">
+				<span class="span">手机号</span><input class="gongyong" type="text" id="phonenumber" placeholder="请输入手机号码"/>
+			</div>
+			<div class="yanzh yang">
+				<span class="span">验证码</span><input class="gongyong"  type="password" id="shoujiyanzheng" placeholder="输入验证码"/>
+			</div>
+			<div class="chuanjian yang">
+				<span class="span">创建密码</span><input  class="gongyong" type="password" id="PassWord" placeholder="6-20位字符组成，区分大小写"/>
+			</div>
+			<div class="comfir yang">
+				<span class="span">密码确认</span><input class="gongyong"  type="password" id="comfirpassword" placeholder="确认密码"/>
+			</div>
+		</div>
+		<div class="tiaoyue"><input type="checkbox" checked="checked" class="check"><span class="agree">同意</span><a class="tiaokuang">良仓注册条款</a></div>
+		<input type="button" value="立刻注册"  id="next"/>
+	</body>
+</html>
+<script src="register.js"></script>
+<script>
+	    var phoneNumber=document.getElementById("phonenumber");
+		var shoujiyanzheng=document.getElementById("shoujiyanzheng");
+	    var passwords=document.getElementById("PassWord");
+	     var Next=document.getElementById("next");
+	     var comfirpassword=document.getElementById("comfirpassword")
+	     phoneNumber=phoneNumber.value;
+	     shoujiyanzheng=shoujiyanzheng.value;
+	     passwords=passwords.value;
+	     comfirpassword=comfirpassword.value;
+	     fun(phonenumber,shoujiyanzheng,passwords,comfirpassword,Next);
+</script>
