@@ -25,16 +25,45 @@
 		<input type="button" value="立刻注册"  id="next"/>
 	</body>
 </html>
-<script src="register.js"></script>
+<script src="sibu.js"></script>
 <script>
 	    var phoneNumber=document.getElementById("phonenumber");
 		var shoujiyanzheng=document.getElementById("shoujiyanzheng");
 	    var passwords=document.getElementById("PassWord");
 	     var Next=document.getElementById("next");
 	     var comfirpassword=document.getElementById("comfirpassword")
-	     phoneNumber=phoneNumber.value;
-	     shoujiyanzheng=shoujiyanzheng.value;
-	     passwords=passwords.value;
-	     comfirpassword=comfirpassword.value;
-	     fun(phonenumber,shoujiyanzheng,passwords,comfirpassword,Next);
+	     
+	Next.onclick=function()
+	    {
+		     var phoneNumbers=phoneNumber.value;
+		     var shoujiyanzhengs=shoujiyanzheng.value;
+		     var passwordss=passwords.value;
+		     var comfirpasswords=comfirpassword.value;
+		     var obj=
+		     {
+		     	username:phoneNumbers,
+		     	password:passwordss,
+		     	status:"register"
+		     }
+		    var phone="^((13[0-9])|(15[^4,\\D])|(18[0-9]))\\d{8}$";
+//		    if(phone.match(phoneNumbers))
+//		    {
+		        if(passwordss==comfirpasswords)
+		        { 
+		        	fun(obj,function(objs)
+				     	{
+				     	   if(obj.code==0)
+				     	   {
+				     	   	alert("注册成功");
+				     	   }
+				     	   else
+				     	   alert(objs.message);
+				        });
+		        }
+		        else
+		        alert("前后密码不一致");
+//	       }
+//		    else alert("请输入正确的手机号码");
+	    }
+	    
 </script>

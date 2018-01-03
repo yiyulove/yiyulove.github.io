@@ -1,0 +1,57 @@
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	outline: none;
+	border: none;
+}
+.logo{
+	width: 100%;
+	height: 56px;
+	margin: 0 auto;
+	background: #25292e;
+}
+.logo-header{
+	width: 95px;
+	height:38px;
+	position: relative;
+	float: left;;
+}
+.logo-header a{
+	width: 95px;
+	height: 38px;
+	background: url(img/icon.png) no-repeat;
+	display: block;
+	position: absolute;
+	top: 7px;
+}
+.logo-box{
+	width:1000px;
+	height: 55px;
+	margin: 0 auto;
+	position: relative;
+}
+.logo-right{
+	width: 271px;
+	height: 56px;
+	position: absolute;
+	right: 0;
+	padding-top: 18px;
+}
+.logo-right a{
+	width: 40px;
+	height: 20px;
+	color: white;
+	float: left;
+	display: block;
+	border-right-color: white;
+	border-right-style: inset;
+	border-right-width: 1px;
+	padding-left: 5px;
+}
+.logo-right span{
+	color: #666;
+	float: left;
+	display: block; 
+	padding-left: 10px;
+}

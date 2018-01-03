@@ -6,8 +6,6 @@ function fun4(phoneNumber,passwords,comfirpassword,Next)
     	var username=phoneNumber.value;
         var pw=passwords.value; 
         var comfirpasswords=comfirpassword.value;
-        console.log("usrename:"+username); 
-        console.log("pssword:"+pw);
         
 	  	var xhr=new XMLHttpRequest();
 	  	xhr.onreadystatechange=function()
@@ -17,8 +15,9 @@ function fun4(phoneNumber,passwords,comfirpassword,Next)
 	  			if(xhr.status>=200&&xhr.status<300||xhr.status==403)
 	  			{
 	  				var obj=JSON.parse(xhr.responseText);
-	  				if(passwords==comfirpasswords)
+	  				if(pw==comfirpasswords)
 	  				{
+	  					console.log(obj.code);
 		  				if(obj.code==0)
 		  				{
 		  					alert("注册成功");
@@ -27,15 +26,13 @@ function fun4(phoneNumber,passwords,comfirpassword,Next)
 	  				else
 	  				{
 	  				  alert("前后密码不一致");
-	  
+	  				  console.log(typeof(passwords)+typeof(comfirpasswords))
 	  				}
 	  			}
-	  	    }	
+	  	   }	
 	  	}  
-	  	xhr.open("POST","http://h6.duchengjiu.top/shop/api_user.php",true);
+	  	xhr.open("POST","http://csit.top/api_user.php",true);
 	  	xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
-  	  	xhr.send("username="+username+"&password="+pw+"&status=register");
-			
-			
+  	  xhr.send("username="+username+"&password="+pw+"&status=register&status=register");
   	}
 }

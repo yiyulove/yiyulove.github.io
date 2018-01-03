@@ -13,10 +13,44 @@
 		<input type="button" value="登录良仓"  id="next"/>
 	</body>
 </html>
-<script src="denglu2.js"></script>
+<script src="sibu.js"></script>
 <script>
-    var phone=document.getElementById("phonenumber");
-    var PassWord=document.getElementById("PassWord");
-    var next=document.getElementById("next");
-     fun3(phone,PassWord,next)
+    var username=document.getElementById("phonenumber");
+    var passwords=document.getElementById("PassWord");
+    var btn=document.getElementById("next");
+    var checked=document.getElementById("checked");
+   
+    btn.onclick=function(){
+    	var user=username.value;
+    	var pass=passwords.value;
+    	objs=
+    	{
+	    	username:user,
+	    	password:pass,
+	    	status:"login"
+        }
+	    fun(objs,function(obj){
+	    	if(obj.code==0)
+	    	{
+	    		 if(checked.checked==true)
+                {
+			    	localStorage.setItem("usrename",user);
+			    	localStorage.setItem("password",pass);
+			    	localStorage.setItem("status","login");
+                }
+	    		location.href="index.html";
+	    	}
+	    	else
+	    	alert(obj.message);
+	    });
+	}
+    window.onload=function(){
+		
+			var phone=localStorage.getItem("username");
+			var pass=localStorage.getItem("password");
+			if(phone!=null&&pass!=null)
+		   {
+	    	var obj={username:phone,password:pass,status:"login"}
+		   }
+	}
 </script>

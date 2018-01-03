@@ -13,10 +13,37 @@
 		<input type="button" value="登录"  id="next"/>
 	</body>
 </html>
-<script src="denglu.js"></script>
+<script src="sibu.js"></script>
 <script>
 	var phoneNumber=document.getElementById("phonenumber");
 	var passwords=document.getElementById("PassWord");
     var next=document.getElementById("next");
-	funs(phoneNumber,passwords,next);
+    var check=document.getElementById("checked");
+	next.onclick=function(){
+		var phone=phoneNumber.value;
+		var pass=passwords.value;
+	    var obj={username:phone,password:pass,status:"login"}
+		fun(obj,function(objs){
+			if(objs.code==0)
+			{
+				if(check.checked==true)
+				{
+					localStorage.setItem("username",phone);
+					localStorage.setItem("password",pass);
+				}
+				location.href="index.html";
+			}
+			else
+			alert(objs.message);
+		});
+	}
+	window.onload=function(){
+		
+			var phone=localStorage.getItem("username");
+			var pass=localStorage.getItem("password");
+			if(phone!=null&&pass!=null)
+		   {
+	    	var obj={username:phone,password:pass,status:"login"}
+		   }
+	}
 </script>
