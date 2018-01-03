@@ -1,31 +1,29 @@
-function fun3(phone,password,next)
+function fun3(phone,passwords,next)
 {
-	var panduan=false;
+	var phonenumber=phone.value;
+	var passwords=passwords.value;
 	next.onclick=function()
 	{
 		var xhr=new XMLHttpRequest;
-		xhr.onreadystatechange=function
+		xhr.onreadystatechange=function()
 		{
 			if(xhr.readyState==4)
 			{
-				if(xhr.status>=300&&xhr<200||xhr.status==403)
+				if(xhr.status>=200&&xhr.status<=300||xhr.status==304)
 				{
-					var obj=JSON.parse(xhr.response);
-					for(var i=0;i<obj.length;i++)
-					{
-						if((obj.info[i].PhoneNumber==phone||obj.info[i].UserName==phone||obj.info[i].Email==phone)&&obj.info[i].PassWord==password)
-						{
-							panduan=true;
-						}
-					}
-					if(panduan==false)
-					{
-						alert("登录失败，用户名不存在或密码错误");
-					}
+					var obj=JSON.parse(xhr.responseText);
+					if(obj.code==0)
+				    {
+				    	alert("登录成功");
+				    }
+				    else
+				    {
+				    	alert("登录失败");	
+				    }
 				}
 			}
 		}
-		xhr.open("get","nameform.txt",true])
-		xhr.send();
+		xhr.open("GET"," http://h6.duchengjiu.top/shop/api_user.php",true);
+		xhr.send("username="+phonenumber+"&password="+passwords+"");
 	}
 }

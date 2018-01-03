@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link href="register.css" type="text/css" rel="stylesheet" />
+	</head>
+	<body>
+		<div class="logo"></div>
+		<div class="dakuangkuang">
+			<div class="pho yang">
+				<span class="span">用户名</span><input class="gongyong" type="text" id="phonenumber" placeholder="请输入手机号码"/>
+			</div>
+			<div class="chuanjian yang">
+				<span class="span">创建密码</span><input  class="gongyong" type="password" id="PassWord" placeholder="6-20位字符组成，区分大小写"/>
+			</div>
+			<div class="comfir yang">
+				<span class="span">密码确认</span><input class="gongyong"  type="password" id="comfirpassword" placeholder="确认密码"/>
+			</div>
+		</div>
+		<div class="tiaoyue"><input type="checkbox" checked="checked" class="check"><span class="agree">同意</span><a class="tiaokuang">良仓注册条款</a></div>
+		<input type="button" value="立刻注册"  id="next"/>
+	</body>
+</html>
+<script src="zhuce.js"></script>
+<script>
+	     var phoneNumber=document.getElementById("phonenumber");
+	     var passwords=document.getElementById("PassWord");
+	     var Next=document.getElementById("next");
+	     var comfirpassword=document.getElementById("comfirpassword");
+	     fun4(phoneNumber,passwords,comfirpassword,Next);
+</script>
