@@ -32,26 +32,106 @@
 	position: relative;
 }
 .logo-right{
-	width: 271px;
-	height: 56px;
+	width: 300px;
+	height: 38px;
 	position: absolute;
 	right: 0;
 	padding-top: 18px;
 }
-.logo-right a{
+.logo-right ul li a{
 	width: 40px;
 	height: 20px;
 	color: white;
 	float: left;
 	display: block;
-	border-right-color: white;
+	font-size: 14px;
+	padding-right: 3px;
+	text-align: center;
+	/*border-right-color: white;
 	border-right-style: inset;
-	border-right-width: 1px;
-	padding-left: 5px;
+	border-right-width: 1px;*/
+	padding-right: 5px;
 }
-.logo-right span{
+.logo-right ul li  span{
 	color: #666;
 	float: left;
+	width: 66px;
+	height: 20px;
 	display: block; 
-	padding-left: 10px;
+	font-size: 14px;
+	text-align: center;
+}
+.logo-right ul li{
+	border-right-color: white;
+	border-right-style:inset;
+	border-right-width: 1px;
+	display: block;
+	float: left;
+	padding-left: 0px;
+}
+#table{
+	width: 1100px;
+	margin: 0 auto;
+	border-top-color: black;
+	border-top-style:solid;
+	border-top-width: 1px;
+	border-bottom-color:#FFB6C1;
+	border-bottom-style:solid;
+	border-bottom-width: 1px;
+	border-collapse: collapse;
+}
+#table tr
+{
+	border-bottom-color:#FFB6C1;
+	border-bottom-style:solid;
+	border-bottom-width: 1px;
+	}
+#table tr td
+{
+	width:100px;
+	height: 20px;
+	border-color:#FFB6C1;
+	border-style:solid;
+	border-width: 1px;
+	display: none;
+}
+
+td{
+	background: #FF69B4;
+}
+.daohuang{
+	width: 738px;
+	height: 150px;
+	background: blue;
+	display: none;
+}
+.dakuangkuang
+{
+	width:1013px;
+	height: 48px;
+	margin: 0 auto;
+}
+.dakuangkuang ul{
+	width: 840px;
+	height: 48px;
+	float: left;
+}
+.dakuangkuang ul li{
+	width:168px;
+	height: 90px;
+	float: left;
+	display: block;
+	list-style: none;
+}
+#ul{
+	float: left;
+	
+}
+#uls li{
+	width: 100px;
+	height: 50px;
+	padding-top: 20px;
+}
+#ul li:hover .daohuang{
+	 display: block;
 }

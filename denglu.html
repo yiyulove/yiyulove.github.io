@@ -22,8 +22,14 @@
 	next.onclick=function(){
 		var phone=phoneNumber.value;
 		var pass=passwords.value;
-	    var obj={username:phone,password:pass,status:"login"}
-		fun(obj,function(objs){
+	    var obj={
+	    		url:"http://csit.top/api_user.php",
+	    		leixing:"POST",
+	    		status:"login",
+	    		json:{username:phone,password:pass}
+	    		}
+		server(obj,function(objs){
+			
 			if(objs.code==0)
 			{
 				if(check.checked==true)
@@ -43,7 +49,12 @@
 			var pass=localStorage.getItem("password");
 			if(phone!=null&&pass!=null)
 		   {
-	    	var obj={username:phone,password:pass,status:"login"}
+	    	var obj={
+	    		url:"http://csit.top/api_user.php",
+	    		leixing:"POST",
+	    		status:"login",
+	    		json:{username:phone,password:pass}
+	    		}
 		   }
 	}
 </script>

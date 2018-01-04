@@ -7,23 +7,137 @@
 	</head>
 	<body>
 		<div class="logo">
-			
 			<div class="logo-box">
 				<div class="logo-header">
 					<a></a>
 				</div>
 			
 				<div class="logo-right">
-				     <a>登录</a>
-				      <a>注册</a>
-				      <span>购物车</span>
-				      <span>消息</span>
-				      <span>添加良品</span>
+				      <ul>
+				      	<li> <a>登录</a>
+				             <a>注册</a>
+				      	</li>
+				      	<li><span>购物车</span></li>
+				      	<li><span>消息</span></li>
+				      	<li> <span>添加良品</span></li>
+				      </ul>
 				</div>
 			</div>
 		</div>
+		<div class="dakuangkuang">
+			    <ul id="ul">
+					<li>
+						<span>首页</span>
+					</li>
+					<li>
+						<span>商店</span>
+						<div class="daohuang">
+							<ul id="uls">
+								
+							</ul>
+							<div>
+					</li>
+					<li>
+						<span>分享</span>
+					</li>
+					<li>
+						<span>达人</span>
+					</li>
+			    </ul>   
+		</div>
+		<th>商品分类</th>
+		  <table id="table">
+				      	<tr>
+				      		<td>分类编号</td>
+				      		<td>分类名称</td>
+				      		<td>分类描述</td>
+				      		<td>分类图标</td>
+				      		<td>排序 升序</td>
+				      		<td>父分类编号</td>
+				      		<td>显示</td>
+				      		<td>站点编号</td>
+				      	</tr>
+				      </table>
 	</body>
 </html>
+<script src="sibu.js"></script>
 <script>
+var uss=document.getElementById("uls");
+var str="";
+
+var xhr=new XMLHttpRequest();
+xhr.onreadystatechange=function(){
 	
+	if(xhr.readyState==4)
+	{
+		if(xhr.status>=200&&xhr.status<300||xhr.status==304)
+		{
+		     var obj=JSON.parse(xhr.responseText);
+		     var json=obj.data;
+		     for(var j=0;j<json.length;j++)
+		     {
+		     	var str="<a onclick=func("+json[j].cat_id+")>"+json[j].cat_name+"</a>"
+		        var ss=document.createElement("li");
+		        ss.innerHTML=str;
+		        uss.appendChild(ss);
+		     }
+		     
+		}
+	}
+}
+xhr.open("GET","http://csit.top/api_cat.php",true);
+xhr.send();
+
+function func(id)
+{
+	var xhr=new XMLHttpRequest();
+	xhr.onreadystatechange=function()
+	{
+		if(xhr.readyState==4)
+		{
+			if(xhr.status>=200&&xhr<300||status==304)
+			{
+				var obj=JSON.parse(xhr.responseText);
+			}
+		}
+	}
+	xhr.open("GET","http://csit.top/api_goods.php?"+id+",true);
+	xhr.send();
+}
+// var table=document.getElementById("table");
+//	var xhr=new XMLHttpRequest();
+//	xhr.onreadystatechange=function(){
+//		 var td="";
+//		 var tds;
+//		 var trs;
+//		 var jsons={};
+//		 var count=0;
+//		if(xhr.readyState==4)
+//		{
+//			if(xhr.status>=200&&xhr.status<300||xhr.status==304)
+//			{
+//				var json=JSON.parse(xhr.responseText);
+//				if(json.code==0)
+//				{	
+//				     jsonp=json.data;
+//					 	console.log(jsonp);
+//					 	
+//					 	for(var j=0;j<jsonp.length;j++)
+//					 	{
+//					 		var tr=document.createElement("tr");
+//					 		for(var l in jsonp[j])
+//					 		{
+//					 		console.log(jsonp[j][l]);
+//					 	    td=document.createElement("td");
+//					 	    td.innerHTML=jsonp[j][l];
+//					 	    tr.appendChild(td);
+//					 	   }
+//					 		table.appendChild(tr);
+//					 	} 
+//				}
+//			}
+//		}
+//	}
+//	xhr.open("GET","http://csit.top/api_cat.php",true);
+//	xhr.send();
 </script>

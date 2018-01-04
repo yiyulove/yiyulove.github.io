@@ -25,11 +25,16 @@
     	var pass=passwords.value;
     	objs=
     	{
-	    	username:user,
-	    	password:pass,
-	    	status:"login"
+    		status:"login",
+    		url:"http://csit.top/api_user.php",
+    		leixing:"POST",
+	    	json:{
+	    		username:user,
+	    		password:pass,
+	    		}
+	    		
         }
-	    fun(objs,function(obj){
+	    server(objs,function(obj){
 	    	if(obj.code==0)
 	    	{
 	    		 if(checked.checked==true)
